@@ -9,13 +9,13 @@ def call(String buildStatus) {
   if (buildStatus == 'UNSTABLE') {
     color = 'YELLOW'
     colorCode = '#FFFF00'
-    subject = "#${env.BUILD_NUMBER} ${buildStatus}: Analysis Unstable. You should be check Jenkins."
+    subject = "#${env.BUILD_NUMBER} ${buildStatus}: Analysis Unstable. You should be check pipeline."
   } else if (buildStatus == 'SUCCESS') {
     color = 'GREEN'
-    colorCode = '#00FF00'
+    colorCode = 'good'
   } else {
     color = 'RED'
-    colorCode = '#FF0000'
+    colorCode = 'danger'
     subject = "#${env.BUILD_NUMBER} ${buildStatus}: Analysis Failed. You should be check QAC Parsing error."
   }
 
