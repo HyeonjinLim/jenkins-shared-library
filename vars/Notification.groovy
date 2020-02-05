@@ -2,7 +2,7 @@ def call(String buildStatus) {
   // Default values
   def colorName = 'RED'
   def colorCode = '#FF0000'
-  def subject = "#${env.BUILD_NUMBER} ${buildStatus}: QAC analysis Success. You can check the results in QAC Dashboard http://13.124.166.12:8080."
+  def subject = "#${env.BUILD_NUMBER} ${buildStatus}: QAC analysis Success. You can check the results in QAC Dashboard(http://13.124.166.12:8080)."
   def summary = "${subject} (${env.BUILD_URL})"
 
   // Override default values based on build status
