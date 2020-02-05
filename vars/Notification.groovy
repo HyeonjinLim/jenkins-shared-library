@@ -16,7 +16,7 @@ def call(String buildStatus) {
   } else {
     color = 'RED'
     colorCode = '#FF0000'
-    subject = "#${env.BUILD_NUMBER} ${buildStatus}: Analysis Failed. You should be check Jenkins."
+    subject = "#${env.BUILD_NUMBER} ${buildStatus}: Analysis Failed. You should be check QAC Parsing error."
   }
 
   // Send notifications
