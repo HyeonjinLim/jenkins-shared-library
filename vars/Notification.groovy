@@ -4,15 +4,7 @@ def call(String buildStatus) {
   def colorCode = '#FF0000'
   def subject = "#${env.BUILD_NUMBER} ${buildStatus}: QAC analysis Success. You can check the results in QAC Dashboard http://13.124.166.12:8080."
   def summary = "${subject} (${env.BUILD_URL})"
-  def blocks = [
-		{
-			"type": "section",
-			"text": {
-				"type": "mrkdwn",
-				"text": "<http://13.124.166.12:8080|QAC Board>"
-			}
-		}
-	]
+
   // Override default values based on build status
   if (buildStatus == 'UNSTABLE') {
     color = 'YELLOW'
@@ -28,5 +20,5 @@ def call(String buildStatus) {
   }
 
   // Send notifications
-  slackSend (color: colorCode, message: summary, blocks=blocks)
+  slackSend (color: colorCode, message: summary)
 }
